@@ -1,0 +1,30 @@
+# Zalozmy, ze program micro_G4_app.cc znajduje sie w katalogu
+# /home/user/Geant4/Micro_G4_app
+# Pozostale pliki zrodlowe C++ w podkatalogu src
+# zas pliki naglowkowe w podkatalogu include.
+
+
+# Aby skompilowac i uruchomic aplikacje nalezy wykonac ponizsze kroki.
+
+# Utworzenie podkatalogu o nazwie "build":
+mkdir /home/user/Geant4/Micro_G4_app/build
+
+# W terminalu, przejście do tego katalogu:
+cd /home/user/Geant4/Micro_G4_app/build
+
+# Przygotowanie plikow potrzebnych do kompilacji. 
+# W terminalu wykonac polecenie:
+cmake /home/user/Geant4/Micro_G4_app
+
+# Kompilacja. W terminalu wykonac polecenie:
+make
+
+# ewentualnie: make -jN   gdzie N = liczba dostepnych rdzeni CPU
+
+# Uruchomienie. W terminalu wykonac polecenie
+
+./micro_G4_app
+
+# Wykonanie krotkiego runu:
+# W linii polecen aplikacji wpisac:
+/control/execute run.mac
