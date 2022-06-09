@@ -1,0 +1,17 @@
+/control/cout/ignoreThreadsExcept 0
+
+# Ustawienie dziala:
+#/gps/pos/type Point
+/gps/pos/type Beam	# Sets source distribution type. Either Point, Beam, Plane, Surface or Volume. "Beam" equals to Gaussian distrib in X and Y. 
+/gps/pos/radius 1. cm 	    # Set radius of source.
+/gps/pos/sigma_r 1.27659 mm	# Set standard deviation in radial of the beam positional profile applicable to Beam type source only. (FWHM = 3 mm)
+/gps/pos/centre 0. 0. 0. cm
+/gps/ene/type Mono
+/gps/ene/mono 10 MeV
+/gps/particle e-
+/gps/direction 0. 0. 1.
+
+/run/printProgress 10
+
+/run/beamOn 10000
+
