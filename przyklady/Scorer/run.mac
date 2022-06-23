@@ -1,0 +1,32 @@
+/control/cout/ignoreThreadsExcept 0
+
+# Ustawienie dziala:
+
+/gps/pos/type Plane	# Sets source distribution type. Either Point, Beam, Plane, Surface or Volume. "Beam" equals to Gaussian distrib in X and Y. 
+/gps/pos/shape Circle
+/gps/pos/centre 0. 0. -10.0 cm
+/gps/pos/radius 5.0 cm
+/gps/ene/type Mono
+/gps/ene/mono 10 MeV
+/gps/particle e-
+/gps/direction 0. 0. 1.
+
+
+/score/create/cylinderMesh siatka
+/score/mesh/cylinderSize 0.5 5.0 cm
+/score/mesh/nBin 1 20 1
+/score/mesh/translate/xyz 0. 0. -5.0 cm
+/score/quantity/energyDeposit EnergyDep MeV
+/score/close
+
+/tracking/storeTrajectory 0
+
+/run/printProgress 1000
+/run/beamOn 10000
+
+
+/score/dumpQuantityToFile siatka EnergyDep EnergyDep.txt
+
+/score/drawColumn siatka EnergyDep 2 0
+#/score/drawProjection siatka EnergyDep defaultLinearColorMap 001
+

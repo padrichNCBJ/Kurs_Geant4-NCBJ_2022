@@ -1,0 +1,13 @@
+root Generator_Test.root 
+TNtuple *ntuple = (TNtuple*)_file0->Get("Generator");
+ntuple->Draw("y:x");
+ntuple->Draw("Ekin");
+
+ALBO
+
+root
+TFile* f1 = TFile::Open("Generator_Test.root");
+TNtuple *ntuple = (TNtuple*)f1->Get("Generator");
+ntuple->Draw("y:x");
+ntuple->Draw("Ekin");
+f1->Close()
